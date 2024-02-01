@@ -9,9 +9,20 @@ if is_playing == "Y":
     print(f"Ok, hold a number in your head between 1 and {top_of_range} and I'll start guessing")
     correct_num = False
     guess_count = 0
+    min_of_range = 1
 
-    ran_num = random.randint(1, int(top_of_range))
-    print(ran_num)
+    ran_num = random.randint(min_of_range, int(top_of_range))
+    print(ran_num) #TODO Take out
+
+    while correct_num == False:
+        guess_count +=1
+        print(f"IS YOUR NUMBER {ran_num}?!?!?!?!")
+        user_input = input("Y/N: ").upper()
+        if user_input == "N":
+            print(f"Was {ran_num} too High or Low?!?!")
+            hL_input = input("H/L: ").upper()
+        else:
+            correct_num = True
 
 else:
     quit()
