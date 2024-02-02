@@ -21,8 +21,17 @@ if is_playing == "Y":
         if user_input == "N":
             print(f"Was {ran_num} too High or Low?!?!")
             hL_input = input("H/L: ").upper()
+
+            if hL_input == "H":
+                top_of_range = ran_num
+                ran_num = random.randint(min_of_range, int(top_of_range))
+            elif hL_input == "L":
+                min_of_range = ran_num
+                ran_num = random.randint(min_of_range, int(top_of_range))
+            else:
+                print("Incorrect input, you broke me!!!")
+                quit()
         else:
             correct_num = True
-
 else:
     quit()
